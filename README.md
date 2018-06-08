@@ -43,7 +43,7 @@ git pull
 
 ```bash
 cd ~/RPWNmasternodesetup
-bash rpwn-setup.sh
+bash RPWN-setup.sh
 ```
 __NOTE:__ This process may take anywhere from 5 to 20 minutes, depending on your VPS HW specs. If it's not your very first ever masternode setup, you may want to speed up the process by doing things in parallel. While the MN setup script is running on the VPS, you can spend this time getting ready to start your new masternode from your Hot Wallet (also referred to as Control Wallet) by following instructions in next step (6).
 
