@@ -54,7 +54,7 @@ function stop_daemon {
 genkey=$1
 
 clear
-echo -e "${YELLOW}ONEM Masternode Setup Script V1.3 for Ubuntu 16.04 LTS${NC}"
+echo -e "${YELLOW}Eswede RESPAWN Masternode Setup Script V0.1 for Ubuntu 16.04 LTS${NC}"
 echo -e "${GREEN}Updating system and installing required packages...${NC}"
 sudo DEBIAN_FRONTEND=noninteractive apt-get update -y
 
