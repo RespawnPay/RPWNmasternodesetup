@@ -133,9 +133,10 @@ fi
 
 #Installing Daemon
 cd ~
-sudo rm RPWN.linux_x64.v0.12.5.2.tar.gz
+
 wget https://github.com/RespawnPay/RPWN/releases/download/v.0.12.5.2/RPWN.linux_x64.v0.12.5.2.tar.gz
 tar -xvf RPWN.linux_x64.v0.12.5.2.tar.gz
+cd ..
 sudo rm /RPWN.linux_x64.v0.12.5.2.tar.gz
 
 stop_daemon
