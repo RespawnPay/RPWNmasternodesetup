@@ -35,7 +35,7 @@ function delay { echo -e "${GREEN}Sleep for $1 seconds...${NC}"; sleep "$1"; }
 function stop_daemon {
     if pgrep -x 'RPWNd' > /dev/null; then
         echo -e "${YELLOW}Attempting to stop RPWNd${NC}"
-        RPWN-cli stop
+        ./RPWN-cli stop
         delay 30
         if pgrep -x 'RPWNd' > /dev/null; then
             echo -e "${RED}RPWNd daemon is still running!${NC} \a"
@@ -141,9 +141,9 @@ rm ~/RPWNmasternodesetup/RPWN.linux_x64.v0.12.5.2.tar.gz
 stop_daemon
 
 # Deploy binaries to /usr/bin
-sudo cp RPWNmasternodesetup/RPWN.linux_x64.v0.12.5.2/RPWN* /usr/bin/
-sudo chmod 755 -R ~/RPWNmasternodesetup
-sudo chmod 755 /usr/bin/RPWN*
+#sudo cp RPWNmasternodesetup/RPWN.linux_x64.v0.12.5.2/RPWN* /usr/bin/
+#sudo chmod 755 -R ~/RPWNmasternodesetup
+#sudo chmod 755 /usr/bin/RPWN*
 
 # Deploy masternode monitoring script
 cp ~/RPWNmasternodesetup/nodemon.sh /usr/local/bin
