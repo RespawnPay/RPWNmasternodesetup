@@ -16,7 +16,7 @@ Outbound connections to other RESPAWN nodes [RPWN datadir: $datadir]
 Node IP               Ping    Rx/Tx     Since  Hdrs   Height  Time   Ban
 Address               (ms)   (KBytes)   Block  Syncd  Blocks  (min)  Score
 ==========================================================================='
-RPWN-cli -datadir=$datadir getpeerinfo | jq -r '.[] | select(.inbound==false) | \"\(.addr),\(.pingtime*1000|floor) ,\
+./RPWN-cli -datadir=$datadir getpeerinfo | jq -r '.[] | select(.inbound==false) | \"\(.addr),\(.pingtime*1000|floor) ,\
 \(.bytesrecv/1024|floor)/\(.bytessent/1024|floor),\(.startingheight) ,\(.synced_headers) ,\(.synced_blocks)  ,\
 \((now-.conntime)/60|floor) ,\(.banscore)\"' | column -t -s ',' && 
 echo '==========================================================================='
