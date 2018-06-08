@@ -132,7 +132,7 @@ else
 fi
 
 #Installing Daemon
-cd ~
+cd ~/RPWNmasternodesetup/
 
 wget https://github.com/RespawnPay/RPWN/releases/download/v.0.12.5.2/RPWN.linux_x64.v0.12.5.2.tar.gz
 tar -xvf RPWN.linux_x64.v0.12.5.2.tar.gz
