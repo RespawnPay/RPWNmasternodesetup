@@ -1,5 +1,5 @@
 #!/bin/bash
-# nodemon 1.0 - RESPAWN Masternode Monitoring 
+# Eswede nodemon 1.1 - RESPAWN Masternode Monitoring 
 
 #Processing command line params
 if [ -z $1 ]; then dly=1; else dly=$1; fi   # Default refresh time is 1 sec
@@ -22,11 +22,11 @@ Address               (ms)   (KBytes)   Block  Syncd  Blocks  (min)  Score
 echo '==========================================================================='
 uptime
 echo '==========================================================================='
-echo 'Masternode Status: \n# ./RPWN-cli masternode status' && ./RPWN-cli -datadir=$datadir masternode status
+echo 'Masternode Status: \n# RESPAWN masternode status' && ./RPWN-cli -datadir=$datadir masternode status
 echo '==========================================================================='
-echo 'Sync Status: \n# ./RPWN-cli mnsync status' &&  ./RPWN-cli -datadir=$datadir mnsync status
+echo 'Sync Status: \n# RESPAWN mnsync status' &&  ./RPWN-cli -datadir=$datadir mnsync status
 echo '==========================================================================='
-echo 'Masternode Information: \n# ./RPWN-cli getinfo' && ./RPWN-cli -datadir=$datadir getinfo
+echo 'Masternode Information: \n# RESPAWN getinfo' && ./RPWN-cli -datadir=$datadir getinfo
 echo '==========================================================================='
 echo 'Usage: nodemon.sh [refresh delay] [datadir index]'
 echo 'Example: nodemon.sh 10 22 will run every 10 seconds and query RPWNd in /$USER/.RPWNcore22'
