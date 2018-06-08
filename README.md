@@ -269,7 +269,8 @@ Press Ctrl-C to Exit...
 
 If you found this script and masternode setup guide helpful...
 
-...please donate RPWN to the devfound: **oMoN1fqkp7Rz9QfRDPAsjsfKM2uNskq76V**
+...please donate to the devfound: RPWN  **oMoN1fqkp7Rz9QfRDPAsjsfKM2uNskq76V**
+or BTC to **1HA19fBDYPPCFuaLemWbNFnDRGXpfNG2Ui**
 
 
 
