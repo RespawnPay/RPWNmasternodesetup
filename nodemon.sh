@@ -1,5 +1,10 @@
 #!/bin/bash
 # Eswede nodemon 1.1 - RESPAWN Masternode Monitoring 
+#If you found this script and masternode setup guide helpful...
+
+#...please donate RPWN to the devfound: oMoN1fqkp7Rz9QfRDPAsjsfKM2uNskq76V
+
+#--ESWEDE
 
 #Processing command line params
 if [ -z $1 ]; then dly=1; else dly=$1; fi   # Default refresh time is 1 sec
