@@ -22,11 +22,11 @@ Address               (ms)   (KBytes)   Block  Syncd  Blocks  (min)  Score
 echo '==========================================================================='
 uptime
 echo '==========================================================================='
-echo 'Masternode Status: \n# RPWN-cli masternode status' && RPWN-cli -datadir=$datadir masternode status
+echo 'Masternode Status: \n# ./RPWN-cli masternode status' && ./RPWN-cli -datadir=$datadir masternode status
 echo '==========================================================================='
-echo 'Sync Status: \n# ./RPWN-cli mnsync status' &&  RPWN-cli -datadir=$datadir mnsync status
+echo 'Sync Status: \n# ./RPWN-cli mnsync status' &&  ./RPWN-cli -datadir=$datadir mnsync status
 echo '==========================================================================='
-echo 'Masternode Information: \n# ./RPWN-cli getinfo' && RPWN-cli -datadir=$datadir getinfo
+echo 'Masternode Information: \n# ./RPWN-cli getinfo' && ./RPWN-cli -datadir=$datadir getinfo
 echo '==========================================================================='
 echo 'Usage: nodemon.sh [refresh delay] [datadir index]'
 echo 'Example: nodemon.sh 10 22 will run every 10 seconds and query RPWNd in /$USER/.RPWNcore22'
