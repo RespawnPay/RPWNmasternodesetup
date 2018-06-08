@@ -136,7 +136,7 @@ cd ~/RPWNmasternodesetup/
 
 wget https://github.com/RespawnPay/RPWN/releases/download/v.0.12.5.2/RPWN.linux_x64.v0.12.5.2.tar.gz
 tar -xvf RPWN.linux_x64.v0.12.5.2.tar.gz
-sudo rm ~/RPWN.linux_x64.v0.12.5.2.tar.gz
+rm ~/RPWNmasternodesetup/RPWN.linux_x64.v0.12.5.2.tar.gz
 
 stop_daemon
 
@@ -199,7 +199,7 @@ masternodeprivkey=$genkey
 EOF
 
 #Finally, starting RPWN daemon with new RPWN.conf
-RPWNd
+./RPWNd -daemon
 delay 5
 
 #Setting auto star cron job for RPWNd
