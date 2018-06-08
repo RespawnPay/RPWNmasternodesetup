@@ -1,6 +1,8 @@
 #!/bin/bash
-# Eswede nodemon 1.1 - RESPAWN Masternode Monitoring 
-#If you found this script and masternode setup guide helpful...
+# Eswede nodemon 1.1 - RESPAWN Masternode Monitoring
+#If you find this script helpful
+# ...please donate to the devfound: RPWN  **oMoN1fqkp7Rz9QfRDPAsjsfKM2uNskq76V**
+# or BTC to **1HA19fBDYPPCFuaLemWbNFnDRGXpfNG2Ui**
 
 #...please donate RPWN to the devfound: oMoN1fqkp7Rz9QfRDPAsjsfKM2uNskq76V
 
