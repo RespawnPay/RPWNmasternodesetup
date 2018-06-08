@@ -293,11 +293,12 @@ ${YELLOW}nodemon.sh${NC}
 or just type 'node' and hit <TAB> to autocomplete script name.
 ========================================================================
 Enjoy your RPWN Masternode and thanks for using this setup script!
-If you found it helpful, please donate RPWN to the devfound
+If you found this script and masternode setup guide helpful...,
 
-oMoN1fqkp7Rz9QfRDPAsjsfKM2uNskq76V
-...and make sure to check back for updates!
---ESWEDE
+...please donate to the devfound: RPWN  **oMoN1fqkp7Rz9QfRDPAsjsfKM2uNskq76V**,
+or BTC to **1HA19fBDYPPCFuaLemWbNFnDRGXpfNG2Ui**
+
+Eswede
 "
 # Run nodemon.sh
 nodemon.sh
