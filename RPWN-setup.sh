@@ -1,6 +1,6 @@
 #!/bin/bash
 # RESPAWN Masternode Setup Script V1.3 for Ubuntu 16.04 LTS
-# (c) 2018 by Eswede for RPWN
+# (c) 2018 by Dwigt007, Modified by Eswede for RPWN
 #
 # Script will attempt to autodetect primary public IP address
 # and generate masternode private key unless specified in command line
@@ -35,7 +35,7 @@ function delay { echo -e "${GREEN}Sleep for $1 seconds...${NC}"; sleep "$1"; }
 function stop_daemon {
     if pgrep -x 'RPWNd' > /dev/null; then
         echo -e "${YELLOW}Attempting to stop RPWNd${NC}"
-        ./RPWN-cli stop
+        RPWN-cli stop
         delay 30
         if pgrep -x 'RPWNd' > /dev/null; then
             echo -e "${RED}RPWNd daemon is still running!${NC} \a"
@@ -108,7 +108,7 @@ echo -e "${YELLOW}"
 sudo ufw --force enable
 echo -e "${NC}"
 
-#Generating Random Password for ONEMd JSON RPC
+#Generating Random Password for JSON RPC
 rpcuser=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
 rpcpassword=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
 
@@ -132,18 +132,18 @@ else
 fi
 
 #Installing Daemon
-cd ~/RPWNmasternodesetup/
-
+cd ~
+mkdir ~/RPWNmasternodesetup/RPWN.linux_x64.v0.12.5.2
 wget https://github.com/RespawnPay/RPWN/releases/download/v.0.12.5.2/RPWN.linux_x64.v0.12.5.2.tar.gz
-tar -xvf RPWN.linux_x64.v0.12.5.2.tar.gz
-rm ~/RPWNmasternodesetup/RPWN.linux_x64.v0.12.5.2.tar.gz
+tar -xvf RPWN.linux_x64.v0.12.5.2.tar.gz -C ~/RPWNmasternodesetup/RPWN.linux_x64.v0.12.5.2
+rm -rf RPWN.linux_x64.v0.12.5.2.tar.gz
 
 stop_daemon
 
 # Deploy binaries to /usr/bin
-#sudo cp RPWNmasternodesetup/RPWN.linux_x64.v0.12.5.2/RPWN* /usr/bin/
-#sudo chmod 755 -R ~/RPWNmasternodesetup
-#sudo chmod 755 /usr/bin/RPWN*
+sudo cp RPWNmasternodesetup/RPWN.linux_x64.v0.12.5.2/RPWN* /usr/bin/
+sudo chmod 755 -R ~/RPWNmasternodesetup
+sudo chmod 755 /usr/bin/RPWN*
 
 # Deploy masternode monitoring script
 cp ~/RPWNmasternodesetup/nodemon.sh /usr/local/bin
@@ -199,11 +199,11 @@ masternodeprivkey=$genkey
 EOF
 
 #Finally, starting RPWN daemon with new RPWN.conf
-./RPWNd -daemon
+RPWNd -daemon
 delay 5
 
 #Setting auto star cron job for RPWNd
-cronjob="@reboot sleep 30 && RPWNd"
+cronjob="@reboot sleep 30 && RPWNd -daemon"
 crontab -l > tempcron
 if ! grep -q "$cronjob" tempcron; then
     echo -e "${GREEN}Configuring crontab job...${NC}"
