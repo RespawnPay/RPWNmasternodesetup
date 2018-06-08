@@ -23,17 +23,17 @@ Outbound connections to other RESPAWN nodes [RPWN datadir: $datadir]
 Node IP               Ping    Rx/Tx     Since  Hdrs   Height  Time   Ban
 Address               (ms)   (KBytes)   Block  Syncd  Blocks  (min)  Score
 ==========================================================================='
-./RPWN-cli -datadir=$datadir getpeerinfo | jq -r '.[] | select(.inbound==false) | \"\(.addr),\(.pingtime*1000|floor) ,\
+RPWN-cli -datadir=$datadir getpeerinfo | jq -r '.[] | select(.inbound==false) | \"\(.addr),\(.pingtime*1000|floor) ,\
 \(.bytesrecv/1024|floor)/\(.bytessent/1024|floor),\(.startingheight) ,\(.synced_headers) ,\(.synced_blocks)  ,\
 \((now-.conntime)/60|floor) ,\(.banscore)\"' | column -t -s ',' && 
 echo '==========================================================================='
 uptime
 echo '==========================================================================='
-echo 'Masternode Status: \n# RESPAWN masternode status' && ./RPWN-cli -datadir=$datadir masternode status
+echo 'Masternode Status: \n# RESPAWN masternode status' && RPWN-cli -datadir=$datadir masternode status
 echo '==========================================================================='
-echo 'Sync Status: \n# RESPAWN mnsync status' &&  ./RPWN-cli -datadir=$datadir mnsync status
+echo 'Sync Status: \n# RESPAWN mnsync status' &&  RPWN-cli -datadir=$datadir mnsync status
 echo '==========================================================================='
-echo 'Masternode Information: \n# RESPAWN getinfo' && ./RPWN-cli -datadir=$datadir getinfo
+echo 'Masternode Information: \n# RESPAWN getinfo' && RPWN-cli -datadir=$datadir getinfo
 echo '==========================================================================='
 echo 'Usage: nodemon.sh [refresh delay] [datadir index]'
 echo 'Example: nodemon.sh 10 22 will run every 10 seconds and query RPWNd in /$USER/.RPWNcore22'
