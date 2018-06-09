@@ -168,15 +168,18 @@ watch -n 10 'RPWN-cli masternode status && RPWN-cli mnsync status'
 The expected output for a functioning masternode will eventually look like this:
 
 ```
+Every 10.0s: RPWN-cli masternode status && RPWN-cli mnsync status                                                                                                                                                    Sat Jun  9 20:25:23 2018
+
 {
-  "vin": "CTxIn(COutPoint(cbe3c99bed2c874a14675c54004a5b5bfda8473b98bfbd80a15743c2a1117d4f, 1), scriptSig=)",
+  "outpoint": "a71513f3c29a44eea69bb90759d4cbc89c7594c41fa4932e309617a6faeccafe-1",
   "service": "188.166.24.178:9321",
-  "payee": "oN3ZoisQkdsCuXj7799kEcvJkWk6Bhc4uJ",
+  "payee": "oS8M3Unrm4tQ21Ew9g3ryuqYB2gjExjXRt",
   "status": "Masternode successfully started"
 }
 {
   "AssetID": 999,
   "AssetName": "MASTERNODE_SYNC_FINISHED",
+  "AssetStartTime": 1528558346,
   "Attempt": 0,
   "IsBlockchainSynced": true,
   "IsMasternodeListSynced": true,
@@ -184,6 +187,7 @@ The expected output for a functioning masternode will eventually look like this:
   "IsSynced": true,
   "IsFailed": false
 }
+
 
 ```
 
