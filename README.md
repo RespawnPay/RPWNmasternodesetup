@@ -168,7 +168,7 @@ watch -n 10 'RPWN-cli masternode status && RPWN-cli mnsync status'
 The expected output for a functioning masternode will eventually look like this:
 
 ```
-Every 10.0s: RPWN-cli masternode status && RPWN-cli mnsync status                                                                                                                                                    Sat Jun  9 20:25:23 2018
+Every 10.0s: RPWN-cli masternode status && RPWN-cli mnsync status                                           Sat Jun  9 20:25:23 2018
 
 {
   "outpoint": "a71513f3c29a44eea69bb90759d4cbc89c7594c41fa4932e309617a6faeccafe-1",
