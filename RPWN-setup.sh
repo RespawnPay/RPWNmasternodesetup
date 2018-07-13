@@ -134,7 +134,7 @@ fi
 #Installing Daemon
 cd ~
 mkdir ~/RPWNmasternodesetup/RPWN.linux_x64.v0.12.5.3
-wget https://github.com/RespawnPay/RPWN/releases/download/v.0.12.5.2/RPWN.linux_x64.v0.12.5.3.tar.gz
+wget https://github.com/RespawnPay/RPWN/releases/download/v.0.12.5.3/RPWN.linux_x64.v0.12.5.3.tar.gz
 tar -xvf RPWN.linux_x64.v0.12.5.3.tar.gz -C ~/RPWNmasternodesetup/RPWN.linux_x64.v0.12.5.3
 rm -rf RPWN.linux_x64.v0.12.5.3.tar.gz
 
