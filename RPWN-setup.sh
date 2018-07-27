@@ -75,9 +75,9 @@ else
 fi
 
 # update packages and upgrade Ubuntu
-sudo apt-get -y upgrade
-sudo apt-get -y dist-upgrade
-sudo apt-get -y autoremove
+#sudo apt-get -y upgrade
+#sudo apt-get -y dist-upgrade
+#sudo apt-get -y autoremove
 sudo apt-get -y install wget nano htop jq
 sudo apt-get -y install libzmq3-dev
 sudo apt-get -y install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
@@ -301,6 +301,6 @@ or BTC to **1HA19fBDYPPCFuaLemWbNFnDRGXpfNG2Ui**
 Eswede
 "
 # Run nodemon.sh
-nodemon.sh
+#nodemon.sh
 
 # EOF
