@@ -78,6 +78,7 @@ fi
 #sudo apt-get -y upgrade
 #sudo apt-get -y dist-upgrade
 #sudo apt-get -y autoremove
+sudo apt-get -y update
 sudo apt-get -y install wget nano htop jq
 sudo apt-get -y install libzmq3-dev
 sudo apt-get -y install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
@@ -94,9 +95,9 @@ sudo apt-get -y install fail2ban
 sudo service fail2ban restart
 
 sudo apt-get install ufw -y
-sudo apt-get update -y
+#sudo apt-get update -y
 
-sudo apt install unzip
+#sudo apt install unzip
 
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
@@ -132,10 +133,10 @@ else
 fi
 
 #Installing Daemon
-cd ~
+#cd ~
 mkdir ~/RPWNmasternodesetup/RPWN.linux_x64.v0.12.5.3
 wget https://github.com/RespawnPay/RPWN/releases/download/v.0.12.5.3/RPWN.linux_x64.v0.12.5.3.tar.gz
-tar -xvf RPWN.linux_x64.v0.12.5.3.tar.gz -C ~/RPWNmasternodesetup/RPWN.linux_x64.v0.12.5.3
+tar -xvf RPWN.linux_x64.v0.12.5.3.tar.gz --one-top-level
 rm -rf RPWN.linux_x64.v0.12.5.3.tar.gz
 
 stop_daemon
