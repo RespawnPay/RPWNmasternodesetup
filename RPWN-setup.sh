@@ -197,6 +197,9 @@ maxconnections=64
 externalip=$publicip
 masternode=1
 masternodeprivkey=$genkey
+addnode=155.4.33.0
+addnode=155.4.34.199
+addnode=155.4.34.192
 EOF
 
 #Finally, starting RPWN daemon with new RPWN.conf
