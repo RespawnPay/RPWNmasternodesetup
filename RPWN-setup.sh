@@ -1,5 +1,5 @@
 #!/bin/bash
-# RESPAWN Masternode Setup Script V1.3 for Ubuntu 16.04 LTS
+# RESPAWN Masternode Setup Script V1.4 for Ubuntu 16.04 LTS
 # (c) 2018 by Dwigt007, Modified by Eswede for RPWN
 #
 # Script will attempt to autodetect primary public IP address
@@ -54,7 +54,7 @@ function stop_daemon {
 genkey=$1
 
 clear
-echo -e "${YELLOW}(c) 2018 by Dwigt007, Modified by Eswede for RESPAWN Masternode Setup Script V1.3 for Ubuntu 16.04 LTS${NC}"
+echo -e "${YELLOW}(c) 2018 by Dwigt007, Modified by Eswede for RESPAWN Masternode Setup Script V1.4 for Ubuntu 16.04 LTS${NC}"
 echo -e "${GREEN}Updating system and installing required packages...${NC}"
 sudo DEBIAN_FRONTEND=noninteractive apt-get update -y
 
@@ -134,15 +134,15 @@ fi
 
 #Installing Daemon
 #cd ~
-mkdir ~/RPWNmasternodesetup/RPWN.linux_x64.v0.12.5.3
-wget https://github.com/RespawnPay/RPWN/releases/download/v.0.12.5.3/RPWN.linux_x64.v0.12.5.3.tar.gz
-tar -xvf RPWN.linux_x64.v0.12.5.3.tar.gz --one-top-level
-rm -rf RPWN.linux_x64.v0.12.5.3.tar.gz
+mkdir ~/RPWNmasternodesetup/RPWN.linux_x64.v0.12.5.4
+wget https://github.com/RespawnPay/RPWN/releases/download/v.0.12.5.4/RPWN.linux_x64.v0.12.5.4.tar.gz
+tar -xvf RPWN.linux_x64.v0.12.5.4.tar.gz --one-top-level
+rm -rf RPWN.linux_x64.v0.12.5.4.tar.gz
 
 stop_daemon
 
 # Deploy binaries to /usr/bin
-sudo cp RPWNmasternodesetup/RPWN.linux_x64.v0.12.5.3/RPWN* /usr/bin/
+sudo cp RPWNmasternodesetup/RPWN.linux_x64.v0.12.5.4/RPWN* /usr/bin/
 sudo chmod 755 -R ~/RPWNmasternodesetup
 sudo chmod 755 /usr/bin/RPWN*
 
