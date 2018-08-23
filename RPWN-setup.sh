@@ -23,7 +23,7 @@ NC='\033[0m' # No Color
 
 #RESPAWN TCP port
 PORT=9321
-
+VERSION=v0.12.5.4
 
 #Clear keyboard input buffer
 function clear_stdin { while read -r -t 0; do read -r; done; }
@@ -56,7 +56,7 @@ genkey=$1
 clear
 echo -e "${YELLOW}(c) 2018 by Dwigt007, Modified by Eswede for RESPAWN Masternode Setup Script V1.4 for Ubuntu 16.04 LTS${NC}"
 echo -e "${GREEN}Updating system and installing required packages...${NC}"
-sudo DEBIAN_FRONTEND=noninteractive apt-get update -y
+DEBIAN_FRONTEND=noninteractive apt-get update -y
 
 # Determine primary public IP address
 dpkg -s dnsutils 2>/dev/null >/dev/null || sudo apt-get -y install dnsutils
@@ -78,35 +78,32 @@ fi
 #sudo apt-get -y upgrade
 #sudo apt-get -y dist-upgrade
 #sudo apt-get -y autoremove
-sudo apt-get -y update
-sudo apt-get -y install wget nano htop jq
-sudo apt-get -y install libzmq3-dev
-sudo apt-get -y install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
-sudo apt-get -y install libevent-dev
+apt-get -y update
+apt-get -y install wget nano htop jq
+apt-get -y install libzmq3-dev
+apt-get -y install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
+apt-get -y install libevent-dev
 
-sudo apt -y install software-properties-common
-sudo add-apt-repository ppa:bitcoin/bitcoin -y
-sudo apt-get -y update
-sudo apt-get -y install libdb4.8-dev libdb4.8++-dev
+apt -y install software-properties-common
+add-apt-repository ppa:bitcoin/bitcoin -y
+apt-get -y update
+apt-get -y install libdb4.8-dev libdb4.8++-dev
 
-sudo apt-get -y install libminiupnpc-dev
+apt-get -y install libminiupnpc-dev
 
-sudo apt-get -y install fail2ban
-sudo service fail2ban restart
+apt-get -y install fail2ban
+service fail2ban restart
 
-sudo apt-get install ufw -y
-#sudo apt-get update -y
-
-#sudo apt install unzip
-
-sudo ufw default deny incoming
-sudo ufw default allow outgoing
-sudo ufw allow ssh
-sudo ufw allow $PORT/tcp
-sudo ufw allow 22/tcp
-sudo ufw limit 22/tcp
+# Installing and configuring firewall
+apt-get install ufw -y
+ufw default deny incoming
+ufw default allow outgoing
+ufw allow ssh
+ufw allow $PORT/tcp
+ufw allow 22/tcp
+ufw limit 22/tcp
 echo -e "${YELLOW}"
-sudo ufw --force enable
+ufw --force enable
 echo -e "${NC}"
 
 #Generating Random Password for JSON RPC
@@ -133,22 +130,19 @@ else
 fi
 
 #Installing Daemon
-#cd ~
-mkdir ~/RPWNmasternodesetup/RPWN.linux_x64.v0.12.5.4
-wget https://github.com/RespawnPay/RPWN/releases/download/v.0.12.5.4/RPWN.linux_x64.v0.12.5.4.tar.gz
-tar -xvf RPWN.linux_x64.v0.12.5.4.tar.gz --one-top-level
-rm -rf RPWN.linux_x64.v0.12.5.4.tar.gz
+wget https://github.com/RespawnPay/RPWN/releases/download/v.0.12.5.4/RPWN.linux_x64.$VERSION.tar.gz
+tar -xvf RPWN.linux_x64.$VERSION.tar.gz --one-top-level
+rm -rf RPWN.linux_x64.$VERSION.tar.gz
 
 stop_daemon
 
 # Deploy binaries to /usr/bin
-sudo cp RPWNmasternodesetup/RPWN.linux_x64.v0.12.5.4/RPWN* /usr/bin/
-sudo chmod 755 -R ~/RPWNmasternodesetup
-sudo chmod 755 /usr/bin/RPWN*
+cp ./RPWN.linux_x64.$VERSION/RPWN* /usr/bin/
+chmod 755 /usr/bin/RPWN*
 
 # Deploy masternode monitoring script
-cp ~/RPWNmasternodesetup/nodemon.sh /usr/local/bin
-sudo chmod 711 /usr/local/bin/nodemon.sh
+# cp ~/RPWNmasternodesetup/nodemon.sh /usr/local/bin
+# chmod 711 /usr/local/bin/nodemon.sh
 
 #Create datadir
 if [ ! -f ~/.RPWNcore/RPWN.conf ]; then 
@@ -164,7 +158,7 @@ rpcuser=$rpcuser
 rpcpassword=$rpcpassword
 EOF
 
-    sudo chmod 755 -R ~/.RPWNcore/RPWN.conf
+    chmod 755 -R ~/.RPWNcore/RPWN.conf
 
     #Starting daemon first time just to generate masternode private key
     RPWNd -daemon
