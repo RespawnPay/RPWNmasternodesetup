@@ -23,7 +23,7 @@ NC='\033[0m' # No Color
 
 #RESPAWN TCP port
 PORT=9321
-VERSION=v0.12.5.4
+VERSION="v0.12.5.4"
 
 #Clear keyboard input buffer
 function clear_stdin { while read -r -t 0; do read -r; done; }
