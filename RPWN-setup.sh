@@ -146,7 +146,7 @@ chmod 755 /usr/bin/RPWN*
 
 #Create datadir
 if [ ! -f ~/.RPWNcore/RPWN.conf ]; then 
-	sudo mkdir ~/.RPWNcore
+	mkdir ~/.RPWNcore
 fi
 
 echo -e "${YELLOW}Creating RPWN.conf...${NC}"
